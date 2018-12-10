@@ -92,13 +92,13 @@ def time_stats(df):
     start_time = time.time()
 
     # TO DO: display the most common month
-#(is most common a function? yes called mode )
+
     pop_month = df['month'].mode()[0]
     # TO DO: display the most common day of week
-#(same as above but with filtered from datetime?)
+
     pop_day = df['day_name'].mode()[0]
     # TO DO: display the most common start hour
-#(same as first? maybe some filtering like a dropon minutes)
+
     pop_hour = df['start_hour'].mode()[0]
     print("Most common month, day, and hour were;",pop_month,",", pop_day,",and", pop_hour,".")
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -112,14 +112,14 @@ def station_stats(df):
     start_time = time.time()
 
     # TO DO: display most commonly used start station
-#(special function to find most common?)
+
     pop_start_station = df['Start Station'].mode()[0]
 
     # TO DO: display most commonly used end station
-#(lit same as above)
+
     pop_end_station = df['End Station'].mode()[0]
     # TO DO: display most frequent combination of start station and end station trip
-#(make dic holding both then fillter? filter is likely a function so make new data type and use the function)
+
     pop_start_end_combo = df['start_end_combo'].mode()[0]
    #
     print("The most used start station was",pop_start_station,". The most used end station was",pop_end_station,". The most used start end combo was ",pop_start_end_combo)

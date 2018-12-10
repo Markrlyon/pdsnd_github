@@ -18,7 +18,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington).
+    #  get user input for city (chicago, new york city, washington).
     city = ""
     while city.lower() != "chicago" and city !="new york city" and city != "washington":
             city = input("Would you like data on chicago, new york city, or washington?").lower()
@@ -34,7 +34,7 @@ def get_filters():
         while month.lower() !="january" and month.lower() !="february" and month.lower() !="march" and month.lower() !="april" and month.lower() !="may" and month.lower() !="june":
             month = input("Please type the month you want from January to May.")
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    # get user input for day of week (all, monday, tuesday, ... sunday)
     day = ""
     while day.lower() != "no" and day != "yes":
         day = input("Would you like to choose a day of the week?")
@@ -91,14 +91,14 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
-#(is most common a function? yes called mode )
+    #  display the most common month
+
     pop_month = df['month'].mode()[0]
-    # TO DO: display the most common day of week
-#(same as above but with filtered from datetime?)
+    #  display the most common day of week
+
     pop_day = df['day_name'].mode()[0]
-    # TO DO: display the most common start hour
-#(same as first? maybe some filtering like a dropon minutes)
+    # display the most common start hour
+
     pop_hour = df['start_hour'].mode()[0]
     print("Most common month, day, and hour were;",pop_month,",", pop_day,",and", pop_hour,".")
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -111,15 +111,15 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
-#(special function to find most common?)
+    #  display most commonly used start station
+
     pop_start_station = df['Start Station'].mode()[0]
 
-    # TO DO: display most commonly used end station
-#(lit same as above)
+    # display most commonly used end station
+
     pop_end_station = df['End Station'].mode()[0]
-    # TO DO: display most frequent combination of start station and end station trip
-#(make dic holding both then fillter? filter is likely a function so make new data type and use the function)
+    #  display most frequent combination of start station and end station trip
+
     pop_start_end_combo = df['start_end_combo'].mode()[0]
    #
     print("The most used start station was",pop_start_station,". The most used end station was",pop_end_station,". The most used start end combo was ",pop_start_end_combo)
@@ -133,10 +133,10 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # display total travel time
     total_time = df['Trip Duration'].sum()
 
-    # TO DO: display mean travel time
+    #  display mean travel time
     mean_time = df['Trip Duration'].mean()
     print("Biikes were used for",total_time, "sec and the mean travel time was",mean_time,"sec.")
     print("\nThis took %s seconds." % (time.time() - start_time))
